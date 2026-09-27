@@ -339,3 +339,22 @@ Estrutura atual de backup (3 camadas):
 - Salvar em: `C:\backup_github_YYYY-MM-DD\`
 
 **Isso é a "camada 4"** - backup do backup.
+
+
+
+---
+
+## 🏢 SOBRE A EMPRESA
+
+- **Nome oficial:** Alpha Resoluções Residenciais
+- **Dono:** Leonardo
+- **Logo:** chave inglesa + casa + fita azul
+- **Cores:** azul escuro (marinho) + azul médio (royal) + branco
+
+**IMPORTANTE:** O sistema é para a empresa "Alpha Resoluções Residenciais",
+não "JF Service" (que era só o nome de exemplo do design de referencia).
+
+**Onde trocar:**
+- Titulo do site: "Alpha Resolucoes Residenciais"
+- Header: logo da Alpha (nao "JF SERVICE")
+- APP_NAME no config.py: "Alpha Resolucoes Residenciais"

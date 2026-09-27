@@ -284,3 +284,58 @@ Sem isso, a IA nao sabe onde voce parou. Sempre cole o arquivo.
 ---
 
 Fim do CONTEXTO.md - Mantenha este arquivo atualizado!
+
+
+
+---
+
+## 📚 PEDIDO ESPECIAL DO LEONARDO
+
+**Quando o sistema estiver PRONTO**, a IA deve:
+
+1. Ler TODO o código do projeto
+2. Escrever um manual completo em `MANUAL.md`
+3. Explicar TUDO do zero:
+   - Como funciona cada arquivo
+   - Como funciona cada rota da API
+   - Como o banco funciona
+   - Como o frontend conversa com o backend
+   - Analogias simples (pizzaria, escritório)
+4. Incluir no manual:
+   - "Como funciona meu sistema"
+   - "Como eu construí" (decisões e erros)
+   - "Como evoluir" (roadmap futuro)
+   - Glossário de termos técnicos
+5. Salvar em: `C:\gestao_assistencias\MANUAL.md`
+6. **Fazer commit + push pro GitHub** (junto com o código)
+
+**Por quê:**
+- Leonardo quer entender 100% do próprio sistema
+- Ter o manual no GitHub (backup + portfólio)
+- Poder consultar quando esquecer
+- Poder mostrar pra outras pessoas
+
+**Também:** Leonardo quer cópia do `MANUAL.md` em outros lugares:
+- GitHub (principal)
+- Google Drive (opcional)
+- Notion/Obsidian (opcional)
+- Impresso (se quiser)
+
+---
+
+## 💾 SEGURANÇA DOS DADOS
+
+Estrutura atual de backup (3 camadas):
+
+1. `C:\gestao_assistencias\` - cópia local (PC)
+2. `C:\backup_gestao_2026-09-26\` - backup local (mesmo PC)
+3. **GitHub** - backup remoto (nuvem)
+
+**Problema:** camadas 1 e 2 estão no MESMO PC.
+**Solução:** GitHub é a única cópia fora do PC. Por isso é IMPORTANTE.
+
+**Recomendação:** 1x por mês, baixar o GitHub em ZIP:
+- No GitHub: Code → Download ZIP
+- Salvar em: `C:\backup_github_YYYY-MM-DD\`
+
+**Isso é a "camada 4"** - backup do backup.

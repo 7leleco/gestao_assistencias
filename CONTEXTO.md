@@ -4,9 +4,9 @@
 > Sempre que o Leonardo iniciar uma nova conversa e colar este arquivo,
 > leia tudo antes de responder e continue de onde paramos.
 
-**Ultima atualizacao:** 26/09/2026 (noite)
+**Ultima atualizacao:** 27/09/2026 (madrugada)
 **Responsavel:** Leonardo
-**Status:** FASE 1 CONCLUIDA - pronto para FASE 2 (Backend base)
+**Status:** FASE 1 e FASE 2 concluidas - pronto para FASE 3 (rotas da API)
 
 ---
 
@@ -23,7 +23,7 @@
 ## Stack (tecnologias)
 
 - **Backend:** Python 3.14 + FastAPI + SQLite + SQLAlchemy
-- **Frontend:** HTML + CSS + JavaScript puro
+- **Frontend:** HTML + CSS + JavaScript puro (ainda nao comecado)
 - **Editor:** VS Code
 - **Controle de versao:** Git + GitHub
 
@@ -40,112 +40,141 @@
 
 ---
 
-## ESTADO ATUAL - 26/09/2026
+## ESTADO ATUAL - 27/09/2026
 
 ### FASE 1 CONCLUIDA! ✅
+- Git inicializado
+- .gitignore completo
+- README.md
+- requirements.txt
+- 3 commits feitos
+- GitHub conectado
 
-- [x] **1.1** - Inicializar Git do zero (`git init` feito) ✅
-- [x] **1.2** - Criar `.gitignore` completo (Python + SO + editores) ✅
-- [x] **1.3** - Criar `README.md` (corrigido: "pip install") ✅
-- [x] **1.4** - Criar `requirements.txt` (fastapi, uvicorn, sqlalchemy, pydantic, python-multipart, jinja2) ✅
-- [x] **1.5** - Primeiro commit (`9b046ca chore: setup inicial do projeto`) ✅
-- [x] **1.6** - Conectar com GitHub (`git remote add origin ...`) ✅
-- [x] **1.7** - Push pro GitHub (`git push --force`) ✅
-- [x] **1.8** - Versionar `CONTEXTO.md` no GitHub (commit `c174b82`) ✅
+### FASE 2 CONCLUIDA! ✅
+- [x] 2.1 - Criar pastas backend/app/routers/services ✅
+- [x] 2.2 - Criar 4x __init__.py ✅
+- [x] 2.3 - Criar config.py ✅
+- [x] 2.4 - Testar config.py ✅
+- [x] 2.5 - Criar database.py ✅
+- [x] 2.6 - Instalar dependencias (venv + pip) ✅
+- [x] 2.7 - Testar database.py ✅
+- [x] 2.8 - Criar models.py (tabela OrdemServico com 32 colunas) ✅
+- [x] 2.9 - Testar models.py ✅
+- [x] 2.10 - Criar main.py ✅
+- [x] 2.11 - Rodar servidor (uvicorn) ✅
+- [x] 2.12 - Testar no navegador (JSON respondeu!) ✅
 
-### Estrutura atual do projeto:
+### Estrutura atual:
 
 C:\gestao_assistencias\
-├── .git/             (criado pelo git init)
-├── .gitignore        (completo - Python + SO + editores)
-├── README.md         (corrigido)
-├── requirements.txt  (6 dependencias)
-└── CONTEXTO.md       (versionado no GitHub)
+├── .git/
+├── .gitignore
+├── README.md
+├── requirements.txt
+├── CONTEXTO.md
+└── backend/
+    ├── __init__.py
+    ├── venv/               (ambiente virtual)
+    ├── gestao.db           (banco SQLite - criado automaticamente)
+    └── app/
+        ├── __init__.py
+        ├── config.py       (configuracoes)
+        ├── database.py     (conexao SQLite)
+        ├── models.py       (tabela OrdemServico)
+        ├── main.py         (servidor FastAPI)
+        ├── routers/
+        │   └── __init__.py
+        └── services/
+            └── __init__.py
 
-### Comandos ja executados:
+### Como rodar o servidor:
 
-- git init
-- git remote add origin https://github.com/7leleco/gestao_assistencias.git
-- git branch -M main
-- git push --force -u origin main
-- git add .
-- git commit -m "chore: setup inicial do projeto"
-- git commit -m "docs: adiciona CONTEXTO.md com FASE 1 concluida"
-- git push
+cd C:\gestao_assistencias\backend
+venv\Scripts\activate
+python -m app.main
 
-### Faltando:
-
-- Nada! FASE 1 concluida! ✅
+Acessa: http://localhost:8000
+Docs: http://localhost:8000/docs
 
 ---
 
-## Proximas etapas da FASE 2 (Backend base)
+## Proximas etapas da FASE 3 (Rotas da API)
 
-1. Criar pasta `backend/`
-2. Criar pasta `backend/app/`
-3. Criar `backend/app/__init__.py` (arquivo vazio)
-4. Criar `backend/app/config.py` (configuracoes)
-5. Criar `backend/app/database.py` (conexao com SQLite)
-6. Criar `backend/app/models.py` (tabelas)
-7. Testar conexao
+1. Criar schemas.py (validacao Pydantic)
+2. Criar routers/ordens.py com:
+   - GET /api/ordens (listar todas)
+   - GET /api/ordens/{id} (obter uma)
+   - POST /api/ordens (criar)
+   - PATCH /api/ordens/{id} (editar)
+   - DELETE /api/ordens/{id} (deletar)
+3. Registrar o router no main.py
+4. Testar tudo no /docs
 
 ---
 
 ## O que ja foi aprendido
 
 - O que e Git (controle de versao)
-- O que e commit (save do projeto)
-- Working Directory vs Staging Area vs Repository
-- git init, git add, git commit, git status
+- O que e commit, git add, git push
 - O que e .gitignore (e como adaptar da internet)
-- O que e __pycache__, venv, .db
-- Padrao de mensagens de commit (Conventional Commits)
-- Regra 3-2-1 de backup
-- O que e README.md
-- O que e Markdown
-- O que e requirements.txt (dependencias do projeto)
-- git remote add origin (conectar com GitHub)
-- git push (enviar pro GitHub)
-- git push --force (sobrescrever quando da conflito)
-- O que e commit hash (codigo unico do commit)
-- O que e branch main
+- O que e README.md, Markdown
+- O que e requirements.txt (dependencias)
+- O que e venv (ambiente virtual) e como ativar
+- O que e pip install -r
+- O que e config.py (configuracoes centralizadas)
+- O que e database.py (conexao com SQLite)
+- O que e SQLAlchemy (ORM)
+- O que e Base, engine, SessionLocal
+- O que e __init__.py (pacote Python)
+- O que e models.py (tabelas em classes)
+- O que e Column, Integer, String, Float, Boolean, DateTime, Text
+- O que e primary_key, unique, index, default
+- O que e FastAPI (app)
+- O que e CORS
+- O que e rota (@app.get)
+- O que e uvicorn (servidor)
+- Como rodar `python -m app.main`
+- Como acessar http://localhost:8000
 
 ---
 
 ## O que falta aprender
 
-- [ ] Criar branch e fazer merge
-- [ ] O que e git pull (baixar do GitHub)
-- [ ] O que e .gitkeep
-- [ ] Estrutura de um projeto Python profissional
-- [ ] O que e uma classe (Python)
-- [ ] O que e funcao, parametro, retorno
-- [ ] Como usar o FastAPI na pratica
-- [ ] O que e um router
-- [ ] O que e uma dependencia do FastAPI
-- [ ] Como ler um erro do Python
-- [ ] Como criar testes automatizados
+- [ ] O que e schemas.py (Pydantic)
+- [ ] O que e router (APIRouter)
+- [ ] Como dividir rotas em arquivos
+- [ ] O que e Depends (injecao de dependencia)
+- [ ] O que e CRUD
+- [ ] O que e git branch e merge
+- [ ] O que e HTML/CSS/JS na pratica
+- [ ] O que e fetch (JS)
 - [ ] O que e deploy
-- [ ] Como usar variaveis de ambiente
+- [ ] O que e testes automatizados
 
 ---
 
 ## Comandos importantes
 
-### Criar ambiente virtual (quando for rodar o projeto)
+### Ativar venv (TODA VEZ que abrir terminal)
 
-cd C:\gestao_assistencias
-python -m venv venv
+cd C:\gestao_assistencias\backend
 venv\Scripts\activate
-pip install -r requirements.txt
+
+### Rodar servidor
+
+python -m app.main
+
+### Parar servidor
+
+Ctrl + C
 
 ### Git - fluxo do dia a dia
 
+cd C:\gestao_assistencias
 git status
 git add .
 git commit -m "msg"
 git push
-git log --oneline
 
 ---
 
@@ -159,7 +188,7 @@ git log --oneline
 - Sidebar a esquerda - Layout profissional
 - Backup antes de tudo - Seguranca
 - Git desde o inicio - Padrao de mercado
-- Projeto 100% zerado em 26/09/2026 - Projeto antigo apagado, recomecando
+- Rodar servidor como modulo (python -m app.main) - Padrao Python
 
 ---
 

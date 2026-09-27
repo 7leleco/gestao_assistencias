@@ -4,9 +4,9 @@
 > Sempre que o Leonardo iniciar uma nova conversa e colar este arquivo,
 > leia tudo antes de responder e continue de onde paramos.
 
-**Ultima atualizacao:** 27/09/2026 (madrugada)
+**Ultima atualizacao:** 27/09/2026 (tarde)
 **Responsavel:** Leonardo
-**Status:** FASE 1 e FASE 2 concluidas - pronto para FASE 3 (rotas da API)
+**Status:** FASE 3 em andamento - 1 de 5 rotas da API feitas
 
 ---
 
@@ -64,6 +64,16 @@
 - [x] 2.11 - Rodar servidor (uvicorn) ✅
 - [x] 2.12 - Testar no navegador (JSON respondeu!) ✅
 
+### FASE 3 EM ANDAMENTO! 🚧
+- [x] 3.1 - Criar schemas.py (OSBase, OSCreate, OSUpdate, OSOut) ✅
+- [x] 3.2 - Criar routers/ordens.py com GET /api/ordens ✅
+- [x] 3.3 - Registrar router no main.py ✅
+- [x] 3.4 - Testar GET /api/ordens no /docs -> 200 OK! ✅
+- [ ] 3.5 - Adicionar GET /api/ordens/{id}
+- [ ] 3.6 - Adicionar POST /api/ordens
+- [ ] 3.7 - Adicionar PATCH /api/ordens/{id}
+- [ ] 3.8 - Adicionar DELETE /api/ordens/{id}
+
 ### Estrutura atual:
 
 C:\gestao_assistencias\
@@ -75,15 +85,19 @@ C:\gestao_assistencias\
 └── backend/
     ├── __init__.py
     ├── venv/               (ambiente virtual)
-    ├── gestao.db           (banco SQLite - criado automaticamente)
+    ├── gestao.db           (banco SQLite)
+    ├── inserir_teste.py    (script de teste)
+    ├── ver_banco.py        (script de teste)
     └── app/
         ├── __init__.py
         ├── config.py       (configuracoes)
         ├── database.py     (conexao SQLite)
         ├── models.py       (tabela OrdemServico)
+        ├── schemas.py      (validacao Pydantic)
         ├── main.py         (servidor FastAPI)
         ├── routers/
-        │   └── __init__.py
+        │   ├── __init__.py
+        │   └── ordens.py   (rotas de OS)
         └── services/
             └── __init__.py
 
@@ -98,29 +112,52 @@ Docs: http://localhost:8000/docs
 
 ---
 
-## Proximas etapas da FASE 3 (Rotas da API)
+## FASE 3 - Rotas da API (EM ANDAMENTO)
 
-1. Criar schemas.py (validacao Pydantic)
-2. Criar routers/ordens.py com:
-   - GET /api/ordens (listar todas)
-   - GET /api/ordens/{id} (obter uma)
-   - POST /api/ordens (criar)
-   - PATCH /api/ordens/{id} (editar)
-   - DELETE /api/ordens/{id} (deletar)
-3. Registrar o router no main.py
-4. Testar tudo no /docs
+### Rotas que ja existem:
+
+- GET /              (raiz - mostra info do app)
+- GET /health        (health check)
+- GET /api/ordens    (listar todas as OS)
+
+### Rotas que faltam:
+
+- GET /api/ordens/{id}      (obter uma OS)
+- POST /api/ordens          (criar OS)
+- PATCH /api/ordens/{id}    (editar OS)
+- DELETE /api/ordens/{id}   (deletar OS)
+
+### Testado e funcionando:
+
+- GET /api/ordens -> retorna a OS "OS-TESTE-001" com 32 campos
+- /docs mostra a rota automaticamente
+- Schemas OSOut com campos opcionais
+
+### Proximo passo:
+
+- Adicionar as 4 rotas restantes (GET por id, POST, PATCH, DELETE)
 
 ---
 
 ## O que ja foi aprendido
 
+### Git e versionamento:
 - O que e Git (controle de versao)
 - O que e commit, git add, git push
 - O que e .gitignore (e como adaptar da internet)
 - O que e README.md, Markdown
-- O que e requirements.txt (dependencias)
+- O que e branch main
+- O que e commit hash
+- O que e git remote add origin
+- O que e git push --force
+
+### Ambiente Python:
 - O que e venv (ambiente virtual) e como ativar
 - O que e pip install -r
+- O que e requirements.txt (dependencias)
+- Como recriar o venv quando quebra
+
+### Backend base:
 - O que e config.py (configuracoes centralizadas)
 - O que e database.py (conexao com SQLite)
 - O que e SQLAlchemy (ORM)
@@ -129,22 +166,43 @@ Docs: http://localhost:8000/docs
 - O que e models.py (tabelas em classes)
 - O que e Column, Integer, String, Float, Boolean, DateTime, Text
 - O que e primary_key, unique, index, default
+
+### FastAPI:
 - O que e FastAPI (app)
 - O que e CORS
 - O que e rota (@app.get)
 - O que e uvicorn (servidor)
 - Como rodar `python -m app.main`
 - Como acessar http://localhost:8000
+- O que e schemas.py (Pydantic) - validacao de dados
+- O que e APIRouter (agrupa rotas por assunto)
+- O que e Depends (injecao de dependencia)
+- O que e response_model (formato da resposta)
+- O que e Optional (campos que aceitam None)
+- Como testar rota no /docs
+- Como o FastAPI gera docs automaticas
+- Erro comum: 2 classes com mesmo nome (uma sobrescreve a outra)
+
+### Banco de dados:
+- O que e SQL direto (INSERT INTO, SELECT)
+- O que e .db (banco SQLite)
+- Como ver o banco com script Python
+
+### Metaforas usadas:
+- API = atendente da pizzaria
+- Banco de dados = cozinha (onde ficam os lanches)
+- Models = ficha tecnica das pizzas
+- Schemas = formulario de pedido
+- Routers = telefones do atendente
 
 ---
 
 ## O que falta aprender
 
-- [ ] O que e schemas.py (Pydantic)
-- [ ] O que e router (APIRouter)
-- [ ] Como dividir rotas em arquivos
-- [ ] O que e Depends (injecao de dependencia)
-- [ ] O que e CRUD
+- [ ] O que e CRUD completo (ja fizemos "R")
+- [ ] Como criar OS via API (POST)
+- [ ] Como editar OS via API (PATCH)
+- [ ] Como deletar OS via API (DELETE)
 - [ ] O que e git branch e merge
 - [ ] O que e HTML/CSS/JS na pratica
 - [ ] O que e fetch (JS)
@@ -168,6 +226,19 @@ python -m app.main
 
 Ctrl + C
 
+### Reiniciar servidor (depois de mudar codigo)
+
+1. Ctrl + C (para)
+2. python -m app.main (roda de novo)
+
+### Ver banco
+
+python ver_banco.py
+
+### Inserir OS de teste
+
+python inserir_teste.py
+
 ### Git - fluxo do dia a dia
 
 cd C:\gestao_assistencias
@@ -189,6 +260,7 @@ git push
 - Backup antes de tudo - Seguranca
 - Git desde o inicio - Padrao de mercado
 - Rodar servidor como modulo (python -m app.main) - Padrao Python
+- Schemas com campos Optional - Pra evitar erro 500 quando dados sao None
 
 ---
 

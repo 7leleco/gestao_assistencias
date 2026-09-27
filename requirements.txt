@@ -3,4 +3,4 @@ uvicorn[standard]
 sqlalchemy
 pydantic
 python-multipart
-jinj2
+jinja2

@@ -8,6 +8,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from app.config import APP_NAME, APP_VERSION
 from app.database import Base, engine
 from app import models
+from app.routers import ordens
 
 # ===== CRIA AS TABELAS NO BANCO =====
 Base.metadata.create_all(bind=engine)
@@ -28,6 +29,7 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+app.include_router(ordens.router)
 
 # ===== ROTAS DE TESTE =====
 @app.get("/")

@@ -6,7 +6,7 @@
 
 **Ultima atualizacao:** 26/09/2026 (noite)
 **Responsavel:** Leonardo
-**Status:** FASE 1 em andamento - projeto 100% zerado e recomecando
+**Status:** FASE 1 CONCLUIDA - pronto para FASE 2 (Backend base)
 
 ---
 
@@ -42,7 +42,7 @@
 
 ## ESTADO ATUAL - 26/09/2026
 
-### FASE 1 - Preparacao do terreno (EM ANDAMENTO)
+### FASE 1 CONCLUIDA! ✅
 
 - [x] **1.1** - Inicializar Git do zero (`git init` feito) ✅
 - [x] **1.2** - Criar `.gitignore` completo (Python + SO + editores) ✅
@@ -51,50 +51,43 @@
 - [x] **1.5** - Primeiro commit (`9b046ca chore: setup inicial do projeto`) ✅
 - [x] **1.6** - Conectar com GitHub (`git remote add origin ...`) ✅
 - [x] **1.7** - Push pro GitHub (`git push --force`) ✅
-
-### FASE 1 CONCLUÍDA! ✅
+- [x] **1.8** - Versionar `CONTEXTO.md` no GitHub (commit `c174b82`) ✅
 
 ### Estrutura atual do projeto:
 
 C:\gestao_assistencias\
-├── .git/          (criado pelo git init)
-├── .gitignore     (completo)
-└── README.md      (criado com 1 erro de digitacao)
+├── .git/             (criado pelo git init)
+├── .gitignore        (completo - Python + SO + editores)
+├── README.md         (corrigido)
+├── requirements.txt  (6 dependencias)
+└── CONTEXTO.md       (versionado no GitHub)
 
 ### Comandos ja executados:
 
 - git init
-- New-Item -ItemType File -Path ".gitignore"
-- New-Item -ItemType File -Path "README.md"
+- git remote add origin https://github.com/7leleco/gestao_assistencias.git
+- git branch -M main
+- git push --force -u origin main
+- git add .
+- git commit -m "chore: setup inicial do projeto"
+- git commit -m "docs: adiciona CONTEXTO.md com FASE 1 concluida"
+- git push
 
 ### Faltando:
 
-- requirements.txt (criar agora)
-- git add .
-- git commit -m "..."
-- git remote add origin (conectar com GitHub)
-- git push
+- Nada! FASE 1 concluida! ✅
 
 ---
 
-## Proximas etapas da FASE 1
+## Proximas etapas da FASE 2 (Backend base)
 
-1. Criar `requirements.txt` com:
-   - fastapi
-   - uvicorn[standard]
-   - sqlalchemy
-   - pydantic
-   - python-multipart
-   - jinja2
-
-2. Fazer primeiro commit:
-   - git add .
-   - git commit -m "chore: setup inicial do projeto"
-
-3. Conectar com GitHub:
-   - git remote add origin https://github.com/7leleco/gestao_assistencias.git
-   - git branch -M main
-   - git push -u origin main
+1. Criar pasta `backend/`
+2. Criar pasta `backend/app/`
+3. Criar `backend/app/__init__.py` (arquivo vazio)
+4. Criar `backend/app/config.py` (configuracoes)
+5. Criar `backend/app/database.py` (conexao com SQLite)
+6. Criar `backend/app/models.py` (tabelas)
+7. Testar conexao
 
 ---
 
@@ -110,13 +103,20 @@ C:\gestao_assistencias\
 - Regra 3-2-1 de backup
 - O que e README.md
 - O que e Markdown
+- O que e requirements.txt (dependencias do projeto)
+- git remote add origin (conectar com GitHub)
+- git push (enviar pro GitHub)
+- git push --force (sobrescrever quando da conflito)
+- O que e commit hash (codigo unico do commit)
+- O que e branch main
 
 ---
 
 ## O que falta aprender
 
 - [ ] Criar branch e fazer merge
-- [ ] O que e git remote, git push, git pull
+- [ ] O que e git pull (baixar do GitHub)
+- [ ] O que e .gitkeep
 - [ ] Estrutura de um projeto Python profissional
 - [ ] O que e uma classe (Python)
 - [ ] O que e funcao, parametro, retorno
@@ -132,13 +132,12 @@ C:\gestao_assistencias\
 
 ## Comandos importantes
 
-### Rodar o servidor (nao funciona ainda - projeto zerado)
+### Criar ambiente virtual (quando for rodar o projeto)
 
 cd C:\gestao_assistencias
 python -m venv venv
 venv\Scripts\activate
 pip install -r requirements.txt
-python app/main.py
 
 ### Git - fluxo do dia a dia
 

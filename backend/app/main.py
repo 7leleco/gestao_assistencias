@@ -4,6 +4,7 @@ Este arquivo cria o app e roda o servidor.
 """
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.responses import HTMLResponse
 
 from app.config import APP_NAME, APP_VERSION
 from app.database import Base, engine
@@ -48,7 +49,26 @@ def health():
     return {"status": "ok"}
 
 
+# ===== SERVE ARQUIVOS DO FRONTEND =====
+from pathlib import Path
+from fastapi.staticfiles import StaticFiles
+
+FRONTEND_DIR = Path(__file__).resolve().parent.parent.parent / "frontend"
+
+app.mount("/static", StaticFiles(directory=FRONTEND_DIR / "static"), name="static")
+
+
+@app.get("/site", response_class=HTMLResponse)
+def pagina_inicial():
+    """Serve a página inicial do site."""
+    caminho = FRONTEND_DIR / "index.html"
+    with open(caminho, "r", encoding="utf-8") as f:
+        return f.read()
+
+
 # ===== RODA O SERVIDOR =====
 if __name__ == "__main__":
     import uvicorn
     uvicorn.run(app, host="0.0.0.0", port=8000)
+
+

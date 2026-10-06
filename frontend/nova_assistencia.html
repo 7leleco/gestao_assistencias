@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nova Assistência — Alpha Resoluções</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+
+    <!-- ===== TOPBAR ===== -->
+    <header class="topbar">
+        <div class="brand">
+            <img src="/static/img/logo.png" alt="Alpha" class="brand-logo">
+        </div>
+
+        <div class="topbar-center">
+            <strong>Alpha Resoluções</strong>
+            <span>Assistências</span>
+        </div>
+
+        <div class="user">
+            <div class="avatar">L</div>
+            <div class="user-info">
+                <strong>Leonardo</strong>
+                <span>Operador</span>
+            </div>
+            <button class="logout">↪</button>
+        </div>
+    </header>
+
+    <!-- ===== CONTEÚDO ===== -->
+    <main class="container">
+
+        <div class="page-header">
+            <h1>Nova assistência</h1>
+        </div>
+
+        <form id="form-nova-os" class="form-card">
+
+            <!-- ===== SEÇÃO 1 — DADOS DA ASSISTÊNCIA ===== -->
+            <div class="form-section">
+                <div class="form-section-title">
+                    <span class="section-number">1</span>
+                    <span>Dados da assistência</span>
+                </div>
+
+                <div class="form-grid form-grid-4">
+                    <div class="form-field">
+                        <label>Nº da assistência</label>
+                        <input type="text" id="numero_os" placeholder="Ex: 02424955/01" required>
+                    </div>
+
+                    <div class="form-field">
+                        <label>Seguradora</label>
+                        <input type="text" id="seguradora" placeholder="Ex: BRADESCO" required>
+                    </div>
+
+                    <div class="form-field">
+                        <label>Tipo de serviço</label>
+                        <input type="text" id="tipo_servico" placeholder="Ex: ELÉTRICA" required>
+                    </div>
+
+                    <div class="form-field">
+                        <label>Data de fechamento</label>
+                        <input type="date" id="data_os" required>
+                    </div>
+                </div>
+
+                <div class="form-grid form-grid-4">
+                    <div class="form-field form-field-2">
+                        <label>Segurado</label>
+                        <input type="text" id="segurado" placeholder="Nome do segurado" required>
+                    </div>
+
+                    <div class="form-field">
+                        <label>Telefone</label>
+                        <input type="text" id="telefone" placeholder="(00) 00000-0000">
+                    </div>
+
+                    <div class="form-field">
+                        <label>Técnico / prestador</label>
+                        <select id="prestador">
+                            <option value="">Não informado</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-grid form-grid-4">
+                    <div class="form-field form-field-2">
+                        <label>Endereço</label>
+                        <input type="text" id="endereco" placeholder="Rua, número e complemento">
+                    </div>
+
+                    <div class="form-field">
+                        <label>Bairro</label>
+                        <input type="text" id="bairro" placeholder="Bairro">
+                    </div>
+
+                    <div class="form-field">
+                        <label>Cidade</label>
+                        <input type="text" id="cidade" placeholder="Cidade">
+                    </div>
+                </div>
+
+                <div class="form-grid form-grid-4">
+                    <div class="form-field">
+                        <label>UF</label>
+                        <input type="text" id="uf" placeholder="SC" maxlength="2" value="SC">
+                    </div>
+                </div>
+            </div>
+
+            <!-- ===== SEÇÃO 2 — VALORES DA ASSISTÊNCIA ===== -->
+            <div class="form-section">
+                <div class="form-section-title">
+                    <span class="section-number">2</span>
+                    <span>Valores da assistência</span>
+                </div>
+
+                <div class="form-grid form-grid-4">
+                    <div class="form-field">
+                        <label>Visita</label>
+                        <div class="input-money">
+                            <span>R$</span>
+                            <input type="number" id="visita" step="0.01" value="0">
+                        </div>
+                    </div>
+
+                    <div class="form-field">
+                        <label>Mão de obra</label>
+                        <div class="input-money">
+                            <span>R$</span>
+                            <input type="number" id="mao_de_obra" step="0.01" value="0">
+                        </div>
+                    </div>
+
+                    <div class="form-field">
+                        <label>Peças</label>
+                        <div class="input-money">
+                            <span>R$</span>
+                            <input type="number" id="pecas" step="0.01" value="0">
+                        </div>
+                    </div>
+
+                    <div class="form-field">
+                        <label>Quilômetros</label>
+                        <input type="number" id="km_rodado" step="1" value="0">
+                    </div>
+                </div>
+
+                <div class="form-grid form-grid-4">
+                    <div class="form-field">
+                        <label>Valor por km</label>
+                        <div class="input-money">
+                            <span>R$</span>
+                            <input type="number" id="valor_km" step="0.01" value="1.3">
+                        </div>
+                    </div>
+
+                    <div class="form-field">
+                        <label>Deslocamento</label>
+                        <div class="input-money">
+                            <span>R$</span>
+                            <input type="number" id="deslocamento" step="0.01" value="0">
+                        </div>
+                    </div>
+
+                    <div class="form-field">
+                        <label>Extras</label>
+                        <div class="input-money">
+                            <span>R$</span>
+                            <input type="number" id="extras" step="0.01" value="0">
+                        </div>
+                    </div>
+
+                    <div class="form-field">
+                        <label>Total da assistência</label>
+                        <div class="total-box">
+                            <span id="total-preview">R$ 0,00</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ===== SEÇÃO 3 — NOTA E OBSERVAÇÕES ===== -->
+            <div class="form-section">
+                <div class="form-section-title">
+                    <span class="section-number">3</span>
+                    <span>Nota e observações</span>
+                </div>
+
+                <div class="nota-group">
+                    <button type="button" class="nota-btn active" data-nota="false">
+                        ⏱ Nota não feita
+                    </button>
+                    <button type="button" class="nota-btn" data-nota="true">
+                        ✓ Nota feita — OK
+                    </button>
+                </div>
+
+                <div class="form-field">
+                    <label>Observações</label>
+                    <textarea id="observacoes" rows="4" placeholder="Serviço realizado, peças usadas, observações da seguradora..."></textarea>
+                </div>
+
+                <div class="upload-box">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+                        <circle cx="8.5" cy="8.5" r="1.5"/>
+                        <polyline points="21 15 16 10 5 21"/>
+                    </svg>
+                    <span>Foto de referência</span>
+                    <input type="file" id="foto" accept="image/*" style="display: none;">
+                </div>
+            </div>
+
+            <!-- ===== BOTÕES ===== -->
+            <div class="form-actions">
+                <button type="button" class="btn-cancelar" onclick="window.location.href='/site'">
+                    Cancelar
+                </button>
+                <button type="submit" class="btn-adicionar">
+                    Adicionar ao caderno
+                </button>
+            </div>
+
+        </form>
+
+    </main>
+
+    <!-- ===== BOTTOM BAR ===== -->
+    <nav class="bottombar">
+        <a href="/site" class="nav-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+            <span>Caderno</span>
+        </a>
+        <a href="#" class="nav-item active">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            <span>Nova assistência</span>
+        </a>
+        <a href="#" class="nav-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+            <span>Importar</span>
+        </a>
+        <a href="#" class="nav-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            <span>Prestadores</span>
+        </a>
+        <a href="#" class="nav-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+            <span>Checklist</span>
+        </a>
+        <a href="#" class="nav-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+            <span>Configurações</span>
+        </a>
+    </nav>
+
+    <!-- ===== SCRIPTS ===== -->
+    <script src="/static/js/api.js"></script>
+    <script src="/static/js/nova_assistencia.js"></script>
+
+</body>
+</html>

@@ -39,7 +39,6 @@ body {
     min-height: 72px;
 }
 
-/* LOGO MAIOR (sem aumentar o topbar) */
 .brand-logo {
     height: 64px;
     width: auto;
@@ -510,4 +509,252 @@ body {
 .nav-item svg {
     width: 22px;
     height: 22px;
+}
+
+/* =========================================================
+   FORMULÁRIO — NOVA ASSISTÊNCIA
+   ========================================================= */
+
+.form-card {
+    background-color: var(--branco);
+    border-radius: 14px;
+    border: 1px solid var(--cinza-2);
+    padding: 28px 32px;
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+.form-section {
+    margin-bottom: 32px;
+    padding-bottom: 28px;
+    border-bottom: 1px solid var(--cinza-2);
+}
+
+.form-section:last-of-type {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.form-section-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--cinza-4);
+    margin-bottom: 20px;
+}
+
+.section-number {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 26px;
+    height: 26px;
+    background-color: var(--azul-claro);
+    color: var(--branco);
+    border-radius: 50%;
+    font-size: 13px;
+    font-weight: 800;
+}
+
+.form-grid {
+    display: grid;
+    gap: 16px;
+    margin-bottom: 16px;
+}
+
+.form-grid-4 {
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.form-field {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.form-field-2 {
+    grid-column: span 2;
+}
+
+.form-field label {
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--cinza-3);
+}
+
+.form-field input[type="text"],
+.form-field input[type="number"],
+.form-field input[type="date"],
+.form-field select,
+.form-field textarea {
+    width: 100%;
+    padding: 10px 14px;
+    border: 1px solid var(--cinza-2);
+    border-radius: 8px;
+    font-size: 14px;
+    font-family: inherit;
+    color: var(--cinza-4);
+    background-color: var(--branco);
+    outline: none;
+    transition: border-color 0.15s;
+}
+
+.form-field input:focus,
+.form-field select:focus,
+.form-field textarea:focus {
+    border-color: var(--azul-claro);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.form-field textarea {
+    resize: vertical;
+    min-height: 90px;
+}
+
+.input-money {
+    display: flex;
+    align-items: center;
+    border: 1px solid var(--cinza-2);
+    border-radius: 8px;
+    background-color: var(--branco);
+    padding: 0 12px;
+    transition: border-color 0.15s;
+}
+
+.input-money:focus-within {
+    border-color: var(--azul-claro);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.input-money span {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--cinza-3);
+    margin-right: 4px;
+}
+
+.input-money input {
+    flex: 1;
+    border: none;
+    background: transparent;
+    outline: none;
+    padding: 10px 0;
+    font-size: 14px;
+    font-family: inherit;
+    color: var(--cinza-4);
+}
+
+.total-box {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    background-color: var(--cinza-4);
+    color: var(--branco);
+    padding: 10px 16px;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: 800;
+    height: 42px;
+}
+
+.nota-group {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.nota-btn {
+    padding: 14px 20px;
+    border: 2px solid var(--cinza-2);
+    border-radius: 10px;
+    background-color: var(--branco);
+    color: var(--cinza-3);
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 8px;
+    transition: all 0.15s;
+}
+
+.nota-btn:hover {
+    border-color: var(--azul-claro);
+    color: var(--azul-claro);
+}
+
+.nota-btn.active {
+    border-color: var(--azul-claro);
+    background-color: var(--azul-bebe);
+    color: var(--azul-claro);
+}
+
+.upload-box {
+    margin-top: 16px;
+    padding: 24px;
+    border: 2px dashed var(--cinza-2);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: var(--cinza-3);
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.15s;
+}
+
+.upload-box:hover {
+    border-color: var(--azul-claro);
+    color: var(--azul-claro);
+    background-color: var(--azul-bebe);
+}
+
+.form-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    margin-top: 28px;
+    padding-top: 24px;
+    border-top: 1px solid var(--cinza-2);
+}
+
+.btn-cancelar {
+    padding: 12px 26px;
+    background-color: var(--branco);
+    color: var(--cinza-4);
+    border: 1px solid var(--cinza-2);
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.15s;
+}
+
+.btn-cancelar:hover {
+    background-color: var(--cinza-1);
+}
+
+.btn-adicionar {
+    padding: 12px 26px;
+    background-color: var(--azul-claro);
+    color: var(--branco);
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.15s;
+}
+
+.btn-adicionar:hover {
+    background-color: var(--azul);
+}
+
+.btn-adicionar:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
 }

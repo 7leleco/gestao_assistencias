@@ -9,7 +9,6 @@
     --cinza-3: #64748b;
     --cinza-4: #0f172a;
     --cinza-escuro: #1e293b;
-    --amarelo: #facc15;
     --laranja: #f97316;
     --verde: #16a34a;
 }
@@ -32,7 +31,7 @@ body {
 .topbar {
     background-color: var(--branco);
     border-bottom: 1px solid var(--cinza-2);
-    padding: 16px 40px;
+    padding: 8px 40px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -40,10 +39,13 @@ body {
     min-height: 72px;
 }
 
+/* LOGO MAIOR (sem aumentar o topbar) */
 .brand-logo {
-    height: 46px;
+    height: 64px;
     width: auto;
     object-fit: contain;
+    display: block;
+    margin: -8px 0;
 }
 
 .topbar-center {
@@ -75,7 +77,8 @@ body {
 .avatar {
     width: 42px;
     height: 42px;
-    background-color: var(--amarelo);
+    background-color: var(--azul-claro);
+    color: var(--branco);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -137,8 +140,8 @@ body {
 }
 
 .btn-nova {
-    background-color: var(--amarelo);
-    color: var(--cinza-4);
+    background-color: var(--azul-claro);
+    color: var(--branco);
     border: none;
     padding: 14px 26px;
     border-radius: 8px;
@@ -148,10 +151,10 @@ body {
 }
 
 .btn-nova:hover {
-    background-color: #eab308;
+    background-color: var(--azul);
 }
 
-/* ===== CARDS (MENORES AGORA) ===== */
+/* ===== CARDS ===== */
 .cards {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -495,8 +498,8 @@ body {
 }
 
 .nav-item.active {
-    background-color: var(--amarelo);
-    color: var(--cinza-4);
+    background-color: var(--azul-claro);
+    color: var(--branco);
 }
 
 .nav-item span {

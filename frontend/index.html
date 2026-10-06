@@ -8,8 +8,9 @@
 </head>
 <body>
 
+    <!-- ===== TOPBAR ===== -->
     <header class="topbar">
-        <div class="topbar-brand">
+        <div class="brand">
             <div class="brand-icon">A</div>
             <div class="brand-text">
                 <strong>ALPHA</strong>
@@ -17,70 +18,66 @@
             </div>
         </div>
 
-        <div class="topbar-user">
+        <div class="user">
             <div class="avatar">L</div>
             <div class="user-info">
                 <strong>Leonardo</strong>
                 <span>Operador</span>
             </div>
-            <button class="logout-btn">↪</button>
+            <button class="logout">↪</button>
         </div>
     </header>
 
-    <main class="content">
+    <!-- ===== CONTEÚDO ===== -->
+    <main class="container">
 
-        <div class="page-header">
+        <!-- Título + Botão -->
+        <div class="header">
             <h1>Assistências</h1>
-            <button class="btn-primary">+ Nova assistência</button>
+            <button class="btn-nova">+ Nova assistência</button>
         </div>
 
+        <!-- Cards de resumo -->
         <div class="cards">
             <div class="card">
-                <span class="card-label">ASSISTÊNCIAS NO PERÍODO</span>
+                <span class="card-label">Assistências no período</span>
                 <strong class="card-valor">0</strong>
                 <span class="card-foot">Total geral</span>
             </div>
 
             <div class="card">
-                <span class="card-label">NOTAS FEITAS</span>
+                <span class="card-label">Notas feitas</span>
                 <strong class="card-valor">0</strong>
                 <span class="card-foot">Marcadas com OK</span>
             </div>
 
             <div class="card">
-                <span class="card-label">NOTAS PENDENTES</span>
+                <span class="card-label">Notas pendentes</span>
                 <strong class="card-valor">0</strong>
                 <span class="card-foot">Precisam de atenção</span>
             </div>
 
             <div class="card">
-                <span class="card-label">VALOR TOTAL</span>
+                <span class="card-label">Valor total</span>
                 <strong class="card-valor">R$ 0</strong>
                 <span class="card-foot">Visita + MDO + peças</span>
             </div>
         </div>
 
+        <!-- Filtros -->
         <div class="filters">
-            <input type="text" class="filter-search" placeholder="🔍 Buscar nº, segurado, cidade...">
-
-            <input type="date" class="filter-date">
-            <input type="date" class="filter-date">
-
-            <button class="filter-btn">Este mês</button>
-
-            <select class="filter-select">
+            <input type="text" class="input-search" placeholder="🔍 Buscar nº, segurado, cidade...">
+            <input type="date" class="input-date">
+            <input type="date" class="input-date">
+            <button class="btn-filter">Este mês</button>
+            <select class="input-select">
                 <option>Todas as seguradoras</option>
             </select>
-
-            <button class="filter-btn active">Todas</button>
-            <button class="filter-btn">Sem nota</button>
-            <button class="filter-btn">Com OK</button>
-
-            <button class="filter-btn-danger">🗑️ Excluir</button>
         </div>
 
-        <div class="table-wrap">
-            <table class="data-table">
+        <!-- Tabela -->
+        <div class="table-container">
+            <table class="table">
                 <thead>
                     <tr>
                         <th><input type="checkbox"></th>
@@ -109,11 +106,11 @@
                         <td>03098141/01</td>
                         <td>
                             <strong>BRADESCO</strong>
-                            <span class="cell-sub">Caixa Entupimento — Desentupimento com roote</span>
+                            <span class="sub">Caixa Entupimento</span>
                         </td>
                         <td>
-                            <strong>BARBARA CRISTINA RODRIGUES</strong>
-                            <span class="cell-sub">📍 Florianópolis</span>
+                            <strong>BÁRBARA CRISTINA</strong>
+                            <span class="sub">📍 Florianópolis</span>
                         </td>
                         <td>Não informado</td>
                         <td>R$ 0,00</td>
@@ -121,12 +118,12 @@
                         <td>R$ 0,00</td>
                         <td>R$ 0,00</td>
                         <td><strong>R$ 0,00</strong></td>
-                        <td><span class="badge badge-pendente">⏱ Fazer nota</span></td>
+                        <td><span class="badge badge-orange">Fazer nota</span></td>
                         <td>
                             <div class="actions">
-                                <button class="icon-btn">👁</button>
-                                <button class="icon-btn">✏️</button>
-                                <button class="icon-btn danger">🗑️</button>
+                                <button class="btn-icon">👁</button>
+                                <button class="btn-icon">✏️</button>
+                                <button class="btn-icon">🗑️</button>
                             </div>
                         </td>
                     </tr>
@@ -137,11 +134,11 @@
                         <td>03061707/03</td>
                         <td>
                             <strong>CAIXA RESIDENCIAL</strong>
-                            <span class="cell-sub">Caixa Alagamento — Hidráulico</span>
+                            <span class="sub">Caixa Alagamento</span>
                         </td>
                         <td>
                             <strong>ANA MARIA MENEGAZZO</strong>
-                            <span class="cell-sub">📍 Florianópolis</span>
+                            <span class="sub">📍 Florianópolis</span>
                         </td>
                         <td>Não informado</td>
                         <td>R$ 0,00</td>
@@ -149,12 +146,12 @@
                         <td>R$ 55,00</td>
                         <td>R$ 80,00</td>
                         <td><strong>R$ 380,00</strong></td>
-                        <td><span class="badge badge-ok">✓ OK</span></td>
+                        <td><span class="badge badge-green">OK</span></td>
                         <td>
                             <div class="actions">
-                                <button class="icon-btn">👁</button>
-                                <button class="icon-btn">✏️</button>
-                                <button class="icon-btn danger">🗑️</button>
+                                <button class="btn-icon">👁</button>
+                                <button class="btn-icon">✏️</button>
+                                <button class="btn-icon">🗑️</button>
                             </div>
                         </td>
                     </tr>
@@ -165,75 +162,11 @@
                         <td>03061610/05</td>
                         <td>
                             <strong>BRADESCO</strong>
-                            <span class="cell-sub">Serviços Diversos — Limpeza de caixa d'água</span>
+                            <span class="sub">Limpeza de caixa d'água</span>
                         </td>
                         <td>
-                            <strong>GLEDY MARY DOS SANTOS NUNES</strong>
-                            <span class="cell-sub">📍 Antápolis</span>
-                        </td>
-                        <td>Não informado</td>
-                        <td>R$ 0,00</td>
-                        <td>R$ 0,00</td>
-                        <td>R$ 0,00</td>
-                        <td>R$ 0,00</td>
-                        <td><strong>R$ 0,00</strong></td>
-                        <td><span class="badge badge-pendente">⏱ Fazer nota</span></td>
-                        <td>
-                            <div class="actions">
-                                <button class="icon-btn">👁</button>
-                                <button class="icon-btn">✏️</button>
-                                <button class="icon-btn danger">🗑️</button>
-                            </div>
-                        </td>
-                    </tr>
-
-                    <tr class="row-group">
-                        <td colspan="13">04/10/2026 · 1 assistência</td>
-                    </tr>
-
-                    <tr class="row-data">
-                        <td><input type="checkbox"></td>
-                        <td>04/10</td>
-                        <td>03060326/03</td>
-                        <td>
-                            <strong>CAIXA RESIDENCIAL</strong>
-                            <span class="cell-sub">Caixa Problemas Elétricos — Padrão</span>
-                        </td>
-                        <td>
-                            <strong>ANDREA MASSIGNAM SALVADOR</strong>
-                            <span class="cell-sub">📍 Florianópolis</span>
-                        </td>
-                        <td>Não informado</td>
-                        <td>R$ 0,00</td>
-                        <td>R$ 75,00</td>
-                        <td>R$ 125,00</td>
-                        <td>R$ 53,30</td>
-                        <td><strong>R$ 453,30</strong></td>
-                        <td><span class="badge badge-ok">✓ OK</span></td>
-                        <td>
-                            <div class="actions">
-                                <button class="icon-btn">👁</button>
-                                <button class="icon-btn">✏️</button>
-                                <button class="icon-btn danger">🗑️</button>
-                            </div>
-                        </td>
-                    </tr>
-
-                    <tr class="row-group">
-                        <td colspan="13">02/10/2026 · 2 assistências</td>
-                    </tr>
-
-                    <tr class="row-data">
-                        <td><input type="checkbox"></td>
-                        <td>02/10</td>
-                        <td>03072715/01</td>
-                        <td>
-                            <strong>BRADESCO</strong>
-                            <span class="cell-sub">Caixa Check-Up — Serviços Gerais</span>
-                        </td>
-                        <td>
-                            <strong>CARLA MARI KLIPPEL BICA DE FREITAS</strong>
-                            <span class="cell-sub">📍 Florianópolis</span>
+                            <strong>GLEDY MARY DOS SANTOS</strong>
+                            <span class="sub">📍 Antápolis</span>
                         </td>
                         <td>Não informado</td>
                         <td>R$ 0,00</td>
@@ -241,40 +174,12 @@
                         <td>R$ 0,00</td>
                         <td>R$ 0,00</td>
                         <td><strong>R$ 0,00</strong></td>
-                        <td><span class="badge badge-pendente">⏱ Fazer nota</span></td>
+                        <td><span class="badge badge-orange">Fazer nota</span></td>
                         <td>
                             <div class="actions">
-                                <button class="icon-btn">👁</button>
-                                <button class="icon-btn">✏️</button>
-                                <button class="icon-btn danger">🗑️</button>
-                            </div>
-                        </td>
-                    </tr>
-
-                    <tr class="row-data">
-                        <td><input type="checkbox"></td>
-                        <td>02/10</td>
-                        <td>03073226/02</td>
-                        <td>
-                            <strong>BRADESCO</strong>
-                            <span class="cell-sub">Caixa Problemas Elétricos — Padrão</span>
-                        </td>
-                        <td>
-                            <strong>ANA PAULA DA SILVA</strong>
-                            <span class="cell-sub">📍 Biguaçu</span>
-                        </td>
-                        <td>Não informado</td>
-                        <td>R$ 0,00</td>
-                        <td>R$ 0,00</td>
-                        <td>R$ 0,00</td>
-                        <td>R$ 0,00</td>
-                        <td><strong>R$ 0,00</strong></td>
-                        <td><span class="badge badge-pendente">⏱ Fazer nota</span></td>
-                        <td>
-                            <div class="actions">
-                                <button class="icon-btn">👁</button>
-                                <button class="icon-btn">✏️</button>
-                                <button class="icon-btn danger">🗑️</button>
+                                <button class="btn-icon">👁</button>
+                                <button class="btn-icon">✏️</button>
+                                <button class="btn-icon">🗑️</button>
                             </div>
                         </td>
                     </tr>

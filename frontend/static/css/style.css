@@ -25,6 +25,7 @@ body {
     background-color: var(--cinza-1);
     color: var(--cinza-4);
     font-size: 14px;
+    padding-bottom: 100px;
 }
 
 /* ===== TOPBAR ===== */
@@ -43,17 +44,11 @@ body {
     gap: 12px;
 }
 
-.brand-icon {
+.brand-logo {
     width: 42px;
     height: 42px;
-    background-color: var(--azul);
-    color: var(--branco);
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: 900;
-    font-size: 20px;
+    object-fit: contain;
+    border-radius: 8px;
 }
 
 .brand-text {
@@ -297,7 +292,6 @@ body {
     background-color: var(--cinza-1);
 }
 
-/* Faixa de agrupamento por data */
 .row-group td {
     background-color: var(--azul);
     color: var(--branco);
@@ -314,7 +308,6 @@ body {
     margin-top: 2px;
 }
 
-/* Badges */
 .badge {
     display: inline-block;
     padding: 5px 12px;
@@ -336,7 +329,6 @@ body {
     border: 1px solid var(--verde);
 }
 
-/* Botões de ação */
 .actions {
     display: flex;
     gap: 6px;
@@ -361,4 +353,54 @@ body {
     background-color: var(--azul-bebe);
     border-color: var(--azul-claro);
     color: var(--azul-claro);
+}
+
+/* ===== BOTTOM BAR (barra flutuante) ===== */
+.bottombar {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--cinza-4);
+    border-radius: 16px;
+    padding: 8px;
+    display: flex;
+    gap: 4px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.25);
+    z-index: 1000;
+}
+
+.nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    padding: 8px 14px;
+    border-radius: 12px;
+    text-decoration: none;
+    color: #94a3b8;
+    font-size: 11px;
+    font-weight: 600;
+    transition: all 0.15s;
+    min-width: 80px;
+}
+
+.nav-item:hover {
+    background-color: #1e293b;
+    color: var(--branco);
+}
+
+.nav-item.active {
+    background-color: var(--azul-claro);
+    color: var(--branco);
+}
+
+.nav-icon {
+    font-size: 18px;
+}
+
+.nav-text {
+    font-size: 10px;
+    white-space: nowrap;
 }

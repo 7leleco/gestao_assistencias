@@ -3,33 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nova Assistência — Alpha Resoluções</title>
+    <title>Nova Assistência — ALPHA Service</title>
     <link rel="stylesheet" href="/static/css/style.css">
 </head>
 <body>
 
-    <!-- ===== TOPBAR ===== -->
     <header class="topbar">
         <div class="brand">
-            <img src="/static/img/logo.png" alt="Alpha" class="brand-logo">
+            <img src="/static/img/logo.png" alt="ALPHA Service" class="brand-logo">
         </div>
-
         <div class="topbar-center">
-            <strong>Alpha Resoluções</strong>
+            <strong>ALPHA Service</strong>
             <span>Assistências</span>
         </div>
-
         <div class="user">
-            <div class="avatar">L</div>
+            <div class="avatar">G</div>
             <div class="user-info">
-                <strong>Leonardo</strong>
+                <strong>Gab</strong>
                 <span>Operador</span>
             </div>
             <button class="logout">↪</button>
         </div>
     </header>
 
-    <!-- ===== CONTEÚDO ===== -->
     <main class="container">
 
         <div class="page-header">
@@ -38,152 +34,146 @@
 
         <form id="form-nova-os" class="form-card">
 
-            <!-- ===== SEÇÃO 1 — DADOS DA ASSISTÊNCIA ===== -->
+            <!-- SEÇÃO 1 -->
             <div class="form-section">
                 <div class="form-section-title">
                     <span class="section-number">1</span>
                     <span>Dados da assistência</span>
                 </div>
 
+                <!-- LINHA 1: Nº, Seguradora, Tipo, Data -->
                 <div class="form-grid form-grid-4">
                     <div class="form-field">
                         <label>Nº da assistência</label>
-                        <input type="text" id="numero_os" placeholder="Ex: 02424955/01" required>
+                        <input type="text" id="numero_os" placeholder="02424955/01" required>
                     </div>
-
                     <div class="form-field">
                         <label>Seguradora</label>
-                        <input type="text" id="seguradora" placeholder="Ex: BRADESCO" required>
+                        <input type="text" id="seguradora" placeholder="BRADESCO" required>
                     </div>
-
                     <div class="form-field">
                         <label>Tipo de serviço</label>
-                        <input type="text" id="tipo_servico" placeholder="Ex: ELÉTRICA" required>
+                        <input type="text" id="tipo_servico" placeholder="ELETRICISTA" required>
                     </div>
-
                     <div class="form-field">
                         <label>Data de fechamento</label>
                         <input type="date" id="data_os" required>
                     </div>
                 </div>
 
+                <!-- LINHA 2: Segurado, Telefone, Técnico, UF -->
                 <div class="form-grid form-grid-4">
-                    <div class="form-field form-field-2">
+                    <div class="form-field">
                         <label>Segurado</label>
                         <input type="text" id="segurado" placeholder="Nome do segurado" required>
                     </div>
-
                     <div class="form-field">
                         <label>Telefone</label>
                         <input type="text" id="telefone" placeholder="(00) 00000-0000">
                     </div>
-
                     <div class="form-field">
                         <label>Técnico / prestador</label>
                         <select id="prestador">
                             <option value="">Não informado</option>
                         </select>
                     </div>
-                </div>
-
-                <div class="form-grid form-grid-4">
-                    <div class="form-field form-field-2">
-                        <label>Endereço</label>
-                        <input type="text" id="endereco" placeholder="Rua, número e complemento">
-                    </div>
-
-                    <div class="form-field">
-                        <label>Bairro</label>
-                        <input type="text" id="bairro" placeholder="Bairro">
-                    </div>
-
-                    <div class="form-field">
-                        <label>Cidade</label>
-                        <input type="text" id="cidade" placeholder="Cidade">
-                    </div>
-                </div>
-
-                <div class="form-grid form-grid-4">
                     <div class="form-field">
                         <label>UF</label>
                         <input type="text" id="uf" placeholder="SC" maxlength="2" value="SC">
                     </div>
                 </div>
+
+                <!-- LINHA 3: Endereço (2 colunas), Bairro, Cidade -->
+                <div class="form-grid form-grid-4">
+                    <div class="form-field form-field-2">
+                        <label>Endereço</label>
+                        <input type="text" id="endereco" placeholder="Rua, número e complemento">
+                    </div>
+                    <div class="form-field">
+                        <label>Bairro</label>
+                        <input type="text" id="bairro" placeholder="Bairro">
+                    </div>
+                    <div class="form-field">
+                        <label>Cidade</label>
+                        <input type="text" id="cidade" placeholder="Cidade">
+                    </div>
+                </div>
             </div>
 
-            <!-- ===== SEÇÃO 2 — VALORES DA ASSISTÊNCIA ===== -->
+            <!-- SEÇÃO 2 (MESMO LAYOUT DO JF - 3 COLUNAS) -->
             <div class="form-section">
                 <div class="form-section-title">
                     <span class="section-number">2</span>
                     <span>Valores da assistência</span>
                 </div>
 
-                <div class="form-grid form-grid-4">
+                <!-- LINHA 1: Visita, Mão de obra, Peças -->
+                <div class="form-grid form-grid-3">
                     <div class="form-field">
                         <label>Visita</label>
                         <div class="input-money">
-                            <span>R$</span>
-                            <input type="number" id="visita" step="0.01" value="0">
+                            <span class="input-money-prefix">R$</span>
+                            <input type="text" id="visita" class="input-valor" placeholder="0" inputmode="numeric">
                         </div>
                     </div>
-
                     <div class="form-field">
                         <label>Mão de obra</label>
                         <div class="input-money">
-                            <span>R$</span>
-                            <input type="number" id="mao_de_obra" step="0.01" value="0">
+                            <span class="input-money-prefix">R$</span>
+                            <input type="text" id="mao_de_obra" class="input-valor" placeholder="0" inputmode="numeric">
                         </div>
                     </div>
-
                     <div class="form-field">
                         <label>Peças</label>
                         <div class="input-money">
-                            <span>R$</span>
-                            <input type="number" id="pecas" step="0.01" value="0">
+                            <span class="input-money-prefix">R$</span>
+                            <input type="text" id="pecas" class="input-valor" placeholder="0" inputmode="numeric">
                         </div>
-                    </div>
-
-                    <div class="form-field">
-                        <label>Quilômetros</label>
-                        <input type="number" id="km_rodado" step="1" value="0">
                     </div>
                 </div>
 
-                <div class="form-grid form-grid-4">
+                <!-- LINHA 2: Quilômetros, Valor por km, Deslocamento -->
+                <div class="form-grid form-grid-3">
+                    <div class="form-field">
+                        <label>Quilômetros</label>
+                        <input type="number" id="km_rodado" placeholder="0">
+                    </div>
                     <div class="form-field">
                         <label>Valor por km</label>
                         <div class="input-money">
-                            <span>R$</span>
-                            <input type="number" id="valor_km" step="0.01" value="1.3">
+                            <span class="input-money-prefix">R$</span>
+                            <input type="text" id="valor_km" class="input-valor" placeholder="1,3" inputmode="numeric">
                         </div>
                     </div>
-
                     <div class="form-field">
                         <label>Deslocamento</label>
                         <div class="input-money">
-                            <span>R$</span>
-                            <input type="number" id="deslocamento" step="0.01" value="0">
+                            <span class="input-money-prefix">R$</span>
+                            <input type="text" id="deslocamento" class="input-valor" placeholder="0" inputmode="numeric">
                         </div>
                     </div>
+                </div>
 
+                <!-- LINHA 3: Extras + Total -->
+                <div class="form-grid form-grid-3">
                     <div class="form-field">
                         <label>Extras</label>
                         <div class="input-money">
-                            <span>R$</span>
-                            <input type="number" id="extras" step="0.01" value="0">
+                            <span class="input-money-prefix">R$</span>
+                            <input type="text" id="extras" class="input-valor" placeholder="0" inputmode="numeric">
                         </div>
                     </div>
-
                     <div class="form-field">
                         <label>Total da assistência</label>
                         <div class="total-box">
                             <span id="total-preview">R$ 0,00</span>
                         </div>
                     </div>
+                    <div></div>
                 </div>
             </div>
 
-            <!-- ===== SEÇÃO 3 — NOTA E OBSERVAÇÕES ===== -->
+            <!-- SEÇÃO 3 -->
             <div class="form-section">
                 <div class="form-section-title">
                     <span class="section-number">3</span>
@@ -215,7 +205,6 @@
                 </div>
             </div>
 
-            <!-- ===== BOTÕES ===== -->
             <div class="form-actions">
                 <button type="button" class="btn-cancelar" onclick="window.location.href='/site'">
                     Cancelar
@@ -229,7 +218,6 @@
 
     </main>
 
-    <!-- ===== BOTTOM BAR ===== -->
     <nav class="bottombar">
         <a href="/site" class="nav-item">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
@@ -257,7 +245,6 @@
         </a>
     </nav>
 
-    <!-- ===== SCRIPTS ===== -->
     <script src="/static/js/api.js"></script>
     <script src="/static/js/nova_assistencia.js"></script>
 
